@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC
+        "-//OpenSymphony Group//XWork 1.1.1//EN"
+        "http://www.opensymphony.com/xwork/xwork-1.1.1.dtd">
+<xwork>
+    <!-- 如果能够对结果进行定义就最好不过了 -->
+    <include file="xwork-default.xml"/>
+    <package name="getcfg" namespace="getcfg">
+        <action name="0.0.1" class="com.wolves.admin.action.cfg.GetCfgAction"/>
+    </package>
+    <package name="setcfg" namespace="setcfg">
+        <action name="0.0.1" class="com.wolves.admin.action.cfg.SetCfgAction"/>
+    </package>
+    <package name="getport" namespace="getport">
+        <action name="0.0.1" class="com.wolves.admin.action.getport.GetPortAction"/>
+    </package>
+    <package name="ping" namespace="ping">
+        <action name="0.0.1" class="com.wolves.admin.action.ping.PingAction"/>
+    </package>
+    <package name="whereis" namespace="whereis">
+        <action name="0.0.1" class="com.wolves.admin.action.whereis.WhereIsAction"/>
+    </package>
+    <package name="getndhis" namespace="getndhis">
+        <action name="0.0.1" class="com.wolves.admin.action.getndhis.GetNodeHisAction"/>
+    </package>
+    <package name="getngstz" namespace="getngstz">
+        <action name="0.0.1" class="com.wolves.admin.action.getngstz.GetNodeGroupStatuzAction"/>
+    </package>
+    <package name="pushserv" namespace="pushserv">
+        <action name="0.0.1" class="com.wolves.admin.action.machine.PushServerAction"/>
+    </package>
+    <package name="getserv" namespace="getserv">
+        <action name="0.0.1" class="com.wolves.admin.action.machine.GetServersAction"/>
+    </package>
+</xwork>

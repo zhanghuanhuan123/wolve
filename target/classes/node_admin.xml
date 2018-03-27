@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <NG_LABEL>ADMIN</NG_LABEL>
+    <NG_VERSION>0.0.1</NG_VERSION>
+    <XWORK_FILE_NAME>xwork_admin.xml</XWORK_FILE_NAME>
+    <STARTUP_STEP_CLASS>com.wolves.admin.startup.StartupStepI</STARTUP_STEP_CLASS>
+    <!-- 本机ip, 请填写其他主机能够访问到本机的ip, 所以请勿填写127.0.0.1(测试目的除外) -->
+    <LOCAL_IP>192.168.174.10</LOCAL_IP>
+    <PROTOCOL>TCP</PROTOCOL>
+    <STARTUP_ICE_SERVICE>true</STARTUP_ICE_SERVICE>
+
+    <!-- 管理节点的连接配置 -->
+    <admin_node>
+        <label>ADMIN</label>
+        <version>0.0.1</version>
+        <host>192.168.174.10</host>
+        <port>8200</port>
+    </admin_node>
+
+    <!-- Ice的配置属性 -->
+    <communication>
+        <!-- 服务的监听端口 -->
+        <listen_port></listen_port>
+        <!-- 服务初始化时创建的线程个数 -->
+        <server_size>10</server_size>
+        <!-- 服务能够创建的最大线程个数 -->
+        <server_size_max>100</server_size_max>
+        <!-- 服务响应的超时时间 单位:ms -->
+        <override_timeout>300</override_timeout>
+    </communication>
+
+    <!-- 要求各节点监听的端口范围 -->
+    <port_range>
+        <!-- 端口最小值 -->
+        <min>8200</min>
+        <!-- 端口最大值 -->
+        <max>8220</max>
+    </port_range>
+    <!-- 节点不作ping多久可判定节点死亡，单位：秒 -->
+    <node_dead_duration>30</node_dead_duration>
+    <!-- 节点不作ping多久可进行数据清理，单位：秒 -->
+    <node_cleanup_duration>86400</node_cleanup_duration>
+    <!-- outpost不进行汇报多久可进行数据清理，单位：秒 -->
+    <server_cleanup_duration>86400</server_cleanup_duration>
+
+</configuration>

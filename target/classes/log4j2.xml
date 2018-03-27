@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <Properties>
+        <Property name="baseDir">logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="${baseDir}/admin.log" append="true"
+                     filePattern="${baseDir}/admin-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d %c [%t] %-p - %m%n"/>
+            <CronTriggeringPolicy schedule="0 0 0 * * ?"/>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${baseDir}" maxDepth="1">
+                    <IfFileName glob="*/admin-*.log.gz"/>
+                    <IfLastModified age="5d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %c [%t] %-p - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache.log4j.xml" level="info"/>
+        <Root level="info">
+            <AppenderRef ref="RollingFile"/>
+            <!--<AppenderRef ref="STDOUT"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
